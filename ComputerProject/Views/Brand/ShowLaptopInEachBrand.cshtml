@@ -1,0 +1,24 @@
+﻿
+@model IEnumerable<IGrouping<Brand, Laptop>>
+
+<h3>
+    Show laptops by each brand
+</h3>
+
+
+<div class="card-group">
+    @foreach (var group in Model)
+    {
+        <div class="card" style="width: 18rem;">
+            <div class="card-header">
+                @group.Key.BrandName
+            </div>
+            @foreach (var lap in group)
+            {
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Brand: @lap.Brand.BrandName, ID: @lap.Id, Price: @lap.Price</li>
+                </ul>
+            }
+        </div>
+    }
+</div>

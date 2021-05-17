@@ -1,0 +1,19 @@
+﻿
+@model List<Laptop>
+
+<h3>
+    Compare the info of two laptops
+</h3>
+
+<div>
+    @foreach (var lap in Model)
+    {
+    <div class="card" style="width: 18rem;">
+        <div class="card-body">
+            <h5 class="card-title">@lap.Brand.BrandName</h5>
+            <h6 class="card-subtitle mb-2 text-muted">Brand name</h6>
+            <p class="card-text">Laptop Id: @lap.Id, Price:@lap.Price$.</p>
+        </div>
+    </div>
+    }
+</div>

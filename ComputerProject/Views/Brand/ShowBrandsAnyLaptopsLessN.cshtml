@@ -1,0 +1,26 @@
+﻿
+@model List<Brand>
+
+<h3>
+    Show brands have any laptop less than @ViewBag.n$
+</h3>
+
+<div>
+    @foreach (var brand in Model)
+    {
+        <div class="card" style="width: 18rem;">
+            <div class="card-header">
+                Brand Name: @brand.BrandName
+            </div>
+            @foreach (var lap in brand.Laptops)
+            {
+                @if (lap.Price < ViewBag.n)
+                {
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Laptop: Id: @lap.Id Price: @lap.Price$</li>
+                    </ul>
+                }
+            }
+        </div>
+    }
+</div>
